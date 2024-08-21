@@ -1,0 +1,902 @@
+{
+  "page_1": {
+    "topics": [
+      "Skin Sensitization Test",
+      "Guinea Pig Maximization"
+    ],
+    "tables": {},
+    "summary": "The image shows a report cover page for a skin sensitization test performed on an article called 'Tubing' using the Guinea Pig Maximization method according to the ISO 10993-10:2010 standard. The test was sponsored by TUV Rheinland (Shenzhen) Co., Ltd. and conducted by CCIC Huatongwei International Inspection (Suzhou) Co., Ltd. The report number, test facility, sponsor details, and verification QR code are provided."
+  },
+  "page_2": {
+    "topics": [
+      "Report Contents",
+      "Quality Assurance",
+      "Test Methodology",
+      "Results and Evaluation"
+    ],
+    "tables": {},
+    "summary": "The image shows the contents page of a report, likely related to quality assurance or testing. It lists various sections such as the purpose, references, test articles, identification of test system, animal management, equipment and reagents, experimental design, observed results, evaluation criteria, conclusion, compliance, record-keeping, confidentiality agreement, and proposed amendment definitions."
+  },
+  "page_3": {
+    "topics": [
+      "Notices",
+      "Report validity and guidelines"
+    ],
+    "tables": {},
+    "summary": "The image contains a set of notices or guidelines regarding a report. It outlines conditions for rechecking the report, the validity of the report based on signatures and testing, restrictions on reproduction, and clarifies the scope of certain ISO standards that are not covered in the report. The image also displays a logo or symbol for an entity called 'CIC'."
+  },
+  "page_4": {
+    "topics": [
+      "Skin Sensitization Study",
+      "Guinea Pig Testing",
+      "Test Article Evaluation"
+    ],
+    "tables": {},
+    "summary": "This is an abstract from a study that evaluated the skin sensitization potential of a test article using guinea pigs according to ISO 10993-10:2010 standards. The guinea pigs were exposed to 0.9% Sodium Chloride Injection and Sesame Oil extracts, and their skin reactions were observed and scored. The test article group showed no skin irritation, while the positive control group exhibited severe reactions. The data met the acceptance criteria, and the test article was concluded to have no potential skin sensitization effects in the guinea pig extraction method under the experimental conditions."
+  },
+  "page_5": {
+    "topics": [
+      "Study Verification",
+      "Protocol Details"
+    ],
+    "tables": {
+      "protocol_info": {
+        "Protocol Number": "SST21120413088B",
+        "Protocol Effective Date": "2021-12-30",
+        "Technical Initiation Date": "2021-12-31",
+        "Technical Completion Date": "2022-01-24",
+        "Final Report Completion Date": "2022-03-08"
+      }
+    },
+    "summary": "The image appears to be a verification and signature page for a study or protocol. It contains details about the protocol number, effective date, initiation date, completion dates, and signatures from personnel approving the study. There is also a circular graphic element and an official stamp or seal."
+  },
+  "page_6": {
+    "topics": [
+      "Quality Assurance Statement",
+      "GLP Statement"
+    ],
+    "tables": {
+      "inspection_details": {
+        "Phase Inspected": [
+          "Experiment",
+          "Raw Data",
+          "Final Report"
+        ],
+        "Date": [
+          "2021-12-31",
+          "2022-01-28",
+          "2022-03-08"
+        ],
+        "Study Director": [
+          "2021-12-31",
+          "2022-01-28",
+          "2022-03-08"
+        ],
+        "Management": [
+          "2021-12-31",
+          "2022-01-28",
+          "2022-03-08"
+        ]
+      }
+    },
+    "summary": "The page contains a Quality Assurance Statement listing inspection dates for an experiment, raw data, and final report, reviewed by the Study Director and Management. It also includes a GLP Statement confirming compliance with U.S. Food and Drug Administration regulations, with signatures from the Study Director."
+  },
+  "page_7": {
+    "topics": [
+      "Skin Sensitization Test",
+      "Test & Control Articles",
+      "ISO References"
+    ],
+    "tables": {
+      "test_articles": {
+        "Groups": [
+          "Name",
+          "Manufacturer",
+          "Size",
+          "Model",
+          "Lot Batch#",
+          "Test Article",
+          "Material",
+          "Physical State",
+          "Color",
+          "Package material",
+          "Sterilized or Not",
+          "Concentration",
+          "Surface (cm\u00b2)",
+          "Weight (g)",
+          "Storage"
+        ],
+        "Name": [
+          "Tubing",
+          null,
+          null,
+          null,
+          null,
+          "Plastic",
+          "Solid",
+          null,
+          null,
+          "Not Sterilized",
+          null,
+          "Not Provided",
+          "Not Provided",
+          "Room Temp."
+        ],
+        "Manufacturer": [
+          "Bayes Dental Canada Inc.",
+          "Guangxi Yuoyun Pharmaceutical Co., Ltd",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Size": [
+          "/ ",
+          "500 ml",
+          "1 L",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Model": [
+          "/ ",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Lot Batch#": [
+          "/ ",
+          "H21011707",
+          "MX202104)1",
+          "IIELKD-PM",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Test Article": [
+          "Tubing",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Material": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Physical State": [
+          null,
+          "Liquid",
+          "Liquid",
+          "Solid",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Color": [
+          null,
+          "Colorless",
+          "Light yellow",
+          "Light yellow",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Package material": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Sterilized or Not": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Concentration": [
+          null,
+          "0.9%",
+          null,
+          "Induction Concentration: 0.1 %, Challenge Concentration: 0.05 %, Dissolved in ethanol",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Surface (cm\u00b2)": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Weight (g)": [
+          null,
+          null,
+          null,
+          "25 g",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "Storage": [
+          null,
+          "Room Temp.",
+          "Room Temp.",
+          "Room Temp.",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "summary": "The page provides information about a skin sensitization test designed to evaluate the potential of a test article to cause skin sensitization in guinea pigs, with the goal of extrapolating the results to humans. It lists the test article, negative controls, and positive control used in the test, along with their details such as manufacturer, size, lot number, material, physical state, and storage conditions. The page also references relevant ISO standards for biological evaluation of medical devices related to irritation, skin sensitization, animal welfare requirements, and sample preparation."
+  },
+  "page_8": {
+    "topics": [
+      "Test System Identification",
+      "Animal Management",
+      "Equipment and Reagents"
+    ],
+    "tables": {},
+    "summary": "The page appears to contain details about an animal study involving guinea pigs. It specifies the test animal species, number, sex, weight, health status, housing conditions, and other experimental setup information. Additionally, it lists the equipment used for measurements and the reagents employed in the study."
+  },
+  "page_9": {
+    "topics": [
+      "Experiment Design",
+      "Sample Preparation",
+      "Extraction Conditions"
+    ],
+    "tables": {
+      "extraction_conditions": {
+        "Aseptic Sampling": [
+          "Whole",
+          "158.4 cm2"
+        ],
+        "Manure sampling": [
+          "6 cm3 / ml"
+        ],
+        "Ratio": [
+          "SC",
+          "26.4 ml",
+          "SO",
+          "26.4 ml"
+        ],
+        "Reagent": [
+          "50 \u00b0C, 72 h/ 600rpm"
+        ],
+        "Condition": [],
+        "pH": [
+          5.5,
+          7,
+          5.5,
+          7,
+          5.5,
+          7
+        ]
+      },
+      "final_extracts": {
+        "Phase": [
+          "Intradermal induction phase I",
+          "Topical induction phaseII",
+          "Challenge phase"
+        ],
+        "Vehicle": [
+          "Injection(SC)",
+          "Sesame Oil (SO)",
+          "Injection(SC)",
+          "Sesame Oil (SO)"
+        ],
+        "Time": [
+          "Before Extraction",
+          "After Extraction",
+          "Before Extraction",
+          "After Extraction",
+          "Before Extraction",
+          "After Extraction"
+        ],
+        "Extracts": [
+          "Test article",
+          "Negative Control",
+          "Test article",
+          "Negative Control",
+          "Test article",
+          "Negative Control"
+        ],
+        "Color": [
+          "Colorless",
+          "Colorless",
+          "Light yellow",
+          "Light yellow",
+          "Colorless",
+          "Colorless",
+          "Light yellow",
+          "Light yellow"
+        ],
+        "Appearance": [
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear",
+          "Clear"
+        ],
+        "Particulates": [
+          "None",
+          "None",
+          "None",
+          "None",
+          "None",
+          "None",
+          "None",
+          "None"
+        ]
+      }
+    },
+    "summary": "The page describes the experimental design and sample preparation steps for extracting test articles under different conditions. It provides details on aseptic sampling, manure sampling ratios, reagents, and pH levels. Additionally, it presents two tables: one outlining the extraction conditions for different phases, and another summarizing the appearance of the final extracts in terms of color, clarity, and particulates."
+  },
+  "page_10": {
+    "topics": [
+      "Intracutaneous Injection",
+      "Dermal Toxicity Test",
+      "Test Article Evaluation",
+      "Negative Control",
+      "Challenge Phase"
+    ],
+    "tables": {
+      "test_results": {
+        "After Extraction": {
+          "Test article": {
+            "Negative Control": "Light yellow",
+            "Light yellow": "Clear",
+            "Clear": "None"
+          },
+          "Sesame Oil (SO)": {
+            "Negative Control": "Light yellow",
+            "Test article": "Light yellow",
+            "Positive Control": "Light yellow"
+          },
+          "0.9% Sodium Chloride": {
+            "Negative Control": "Colorless",
+            "Clear": "None"
+          }
+        },
+        "Before Extraction": {
+          "Test article": {
+            "Negative Control": "Colorless",
+            "Colorless": "Clear",
+            "Clear": "None"
+          },
+          "0.9% Sodium Chloride": {
+            "Negative Control": "Colorless",
+            "Colorless": "Clear",
+            "Clear": "None"
+          }
+        }
+      }
+    },
+    "summary": "The page outlines the protocol for an intracutaneous injection dermal toxicity test involving test articles, negative controls, and a challenge phase. It provides a table with observations after extraction of the test articles and controls, noting properties like color and clarity. Additionally, it describes the injection sites (A, B, C) and procedures for the topical induction and challenge phases."
+  },
+  "page_11": {
+    "topics": [
+      "Skin Irritation Study",
+      "Magnusson and Kiljman Grading Scale",
+      "Evaluation Criteria",
+      "Study Results",
+      "Compliance",
+      "Record Keeping",
+      "Confidentiality"
+    ],
+    "tables": {
+      "grading_scale": {
+        "Patch test reaction": [
+          "No visible change",
+          "Discrete or patchy erythema",
+          "Moderate and confluent erythema",
+          "Intense erythema and/or swelling"
+        ],
+        "Grading scale": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "summary": "The image appears to be a page from a report detailing the methodology and results of a skin irritation study conducted on guinea pigs using test articles and control substances. It provides instructions for applying the test articles, observing and grading skin reactions using the Magnusson and Kiljman scale, and evaluating the results to determine if the test article caused sensitization. The page also includes a table with the grading scale criteria, mentions compliance with relevant regulations, record keeping requirements, and confidentiality agreements."
+  },
+  "page_12": {
+    "topics": [
+      "Protocol amendments/deviations"
+    ],
+    "tables": {},
+    "summary": "The image appears to be a page from a report or document stating that there were no amendments or deviations that occurred during the course of a study. It contains a blue circular logo with the letters 'CIC' in the center."
+  },
+  "page_13": {
+    "topics": [
+      "Guinea Pig Sensitization",
+      "Dermal Reactions"
+    ],
+    "tables": {
+      "guinea_pig_sensitization_dermal_reactions": {
+        "Group": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "Test article",
+          "SC*",
+          "Negative Control",
+          "Test article",
+          "SO**",
+          "Negative Control"
+        ],
+        "No.": [
+          314.4,
+          304.4,
+          313.2,
+          307.7,
+          303.7,
+          314.9,
+          307.7,
+          319.6,
+          304.6,
+          317.6,
+          306.8,
+          311.2,
+          308.4,
+          309.9,
+          315.1,
+          315.2,
+          309.1,
+          314.1,
+          315.5,
+          309.0,
+          315.7,
+          303.5,
+          315.3,
+          307.1,
+          303.8,
+          314.3,
+          306.9,
+          316.5,
+          304.1,
+          317.0
+        ],
+        "Pretest reading(*)": [
+          379.2,
+          367.9,
+          378.8,
+          372.8,
+          368.1,
+          380.0,
+          371.7,
+          383.9,
+          369.6,
+          381.9,
+          370.7,
+          375.1,
+          373.8,
+          374.9,
+          378.3,
+          382.3,
+          374.2,
+          379.1,
+          380.6,
+          375.5,
+          378.9,
+          370.3,
+          374.1,
+          372.5,
+          368.7,
+          379.6,
+          373.3,
+          381.3,
+          370.3,
+          382.2
+        ],
+        "The Challenge patch was removed 24h later Erythema": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "The Challenge patch was removed 24h later Swelling": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "The Challenge patch was removed 48h later Erythema": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "The Challenge patch was removed 48h later Swelling": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Positive rate": [
+          "0%",
+          "0%",
+          "0%"
+        ]
+      }
+    },
+    "summary": "The image contains a table titled 'Guinea pig Sensitization Dermal Reactions' which presents data on dermal reactions in guinea pigs subjected to a sensitization challenge. The table includes information such as group, animal number, pre-test readings, and observations for erythema and swelling at 24 and 48 hours after the challenge patch removal. The data shows no positive reactions observed across all groups."
+  },
+  "page_14": {
+    "topics": [
+      "Positive Control",
+      "Challenge Patch",
+      "Weights"
+    ],
+    "tables": {
+      "positive_control_table": {
+        "Group": [
+          "Positive",
+          "Positive Amelie Group",
+          "Solution",
+          "Control Group"
+        ],
+        "No.": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "Pretest weight(g)": [
+          314.1,
+          304.2,
+          312.6,
+          308.7,
+          311.5,
+          308.4,
+          313.7,
+          309.2,
+          317.3,
+          315.1,
+          307.2,
+          313.5,
+          304.9,
+          315.1,
+          308.7
+        ],
+        "Finished weight(g)": [
+          372.1,
+          361.5,
+          379.8,
+          368.7,
+          338.4,
+          368.7,
+          378.4,
+          367.8,
+          386.7,
+          376.2,
+          365.4,
+          379.1,
+          367.6,
+          377.5,
+          363.4
+        ],
+        "The Challenge patch was removed 24 h later": {
+          "Erythema": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "Swelling": [
+            2,
+            0,
+            1,
+            2,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "The Challenge patch was removed 0 h later": {
+          "Erythema": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            2,
+            3,
+            2,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "Swelling": [
+            2,
+            0,
+            1,
+            2,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "Positive rate": [
+          "100%",
+          null,
+          null,
+          null,
+          null,
+          "0%"
+        ]
+      }
+    },
+    "summary": "The image contains a table titled 'Table 3 Positive control' which displays data related to a study involving challenge patches applied to different groups of subjects. The table lists the group names, subject numbers, weights before and after the study, erythema and swelling scores recorded at different time points after patch removal, and positive rates for some groups. A note at the bottom mentions the positive control used in the study."
+  }
+}

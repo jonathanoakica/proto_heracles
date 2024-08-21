@@ -1,0 +1,8 @@
+flask
+PyPDF2
+Pillow
+requests
+boto3
+anthropic
+fitz
+flask_cors

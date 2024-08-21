@@ -1,0 +1,15 @@
+version: 1.0
+runtime: python3
+build:
+  commands:
+    build:
+      - pip install -r backend/requirements.txt
+run:
+  command: python backend/app.py
+  network:
+    port: 5000
+  env:
+    - name: ANTHROPIC_API_KEY
+      value: '{{resolve:ssm:ANTHROPIC_API_KEY:1}}'
+    - name: AWS_S3_BUCKET
+      value: '{{resolve:ssm:AWS_S3_BUCKET:1}}'
