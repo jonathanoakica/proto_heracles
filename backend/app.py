@@ -17,7 +17,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 # S3 configuration
-S3_BUCKET = os.environ.get('AWS_S3_BUCKET')
+S3_BUCKET = os.environ.get('HERACLES_S3_BUCKET')
 s3_client = boto3.client('s3')
 
 # Anthropic configuration

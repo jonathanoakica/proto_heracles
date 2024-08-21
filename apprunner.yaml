@@ -11,5 +11,5 @@ run:
   env:
     - name: ANTHROPIC_API_KEY
       value: '{{resolve:ssm:ANTHROPIC_API_KEY:1}}'
-    - name: AWS_S3_BUCKET
-      value: '{{resolve:ssm:AWS_S3_BUCKET:1}}'
+    - name: HERACLES_S3_BUCKET
+      value: '{{resolve:ssm:HERACLES_S3_BUCKET:1}}'
