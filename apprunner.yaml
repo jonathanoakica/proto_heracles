@@ -3,7 +3,6 @@ runtime: python311
 build:
   commands:
     build:
-      - pip install flask
 run:
   command: cd backend && python app.py
   network:
