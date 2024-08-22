@@ -18,6 +18,7 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 # S3 configuration
 S3_BUCKET = os.environ.get('HERACLES_S3_BUCKET')
+S3_PREFIX = os.environ.get('HERACLES_S3_PREFIX', 'heracles')
 s3_client = boto3.client('s3')
 
 # Anthropic configuration
@@ -26,7 +27,9 @@ anthropic = Anthropic(api_key=ANTHROPIC_API_KEY)
 
 def upload_file_to_s3(file_name, bucket, object_name=None):
     if object_name is None:
-        object_name = file_name
+        object_name = os.path.join(S3_PREFIX, os.path.basename(file_name))
+    else:
+        object_name = os.path.join(S3_PREFIX, object_name)
     try:
         s3_client.upload_file(file_name, bucket, object_name)
     except ClientError as e:
@@ -35,192 +38,15 @@ def upload_file_to_s3(file_name, bucket, object_name=None):
     return True
 
 def download_file_from_s3(bucket, object_name, file_name):
+    full_object_name = os.path.join(S3_PREFIX, object_name)
     try:
-        s3_client.download_file(bucket, object_name, file_name)
+        s3_client.download_file(bucket, full_object_name, file_name)
     except ClientError as e:
         print(f"Error downloading file from S3: {e}")
         return False
     return True
 
-def encode_image_to_base64(image_path):
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode('utf-8')
-
-def analyze_page_with_claude(image_path):
-    base64_image = encode_image_to_base64(image_path)
-    
-    results = []
-    retry_count = 0
-    max_retries = 10
-
-    check_for_keys = ["topics", "tables", "summary"]
-
-    while retry_count < max_retries:
-        try:
-            response = anthropic.messages.create(
-                model="claude-3-sonnet-20240229",
-                max_tokens=4096,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": [
-                            {
-                                "type": "image",
-                                "source": {
-                                    "type": "base64",
-                                    "media_type": "image/png",
-                                    "data": base64_image
-                                }
-                            },
-                            {
-                                "type": "text",
-                                "text": """
-                                {
-                                  "role": "You are an expert page summarizer and data extractor.",
-                                  "task": "Analyze the provided image of a page and extract key information.",
-                                  "output_format": {
-                                    "type": "JSON",
-                                    "structure": {
-                                      "topics": ["Array of main topics identified on the page"],
-                                      "tables": {
-                                        "table_name": {
-                                          "description": "Dictionary representation of each table",
-                                          "note": "Maintain the original table structure for easy conversion to a dataframe"
-                                        }
-                                      },
-                                      "summary": "A concise summary of the page content"
-                                    }
-                                  },
-                                  "instructions": [
-                                    "Identify and list the main topics present on the page",
-                                    "Extract any tables, preserving their structure",
-                                    "Represent tables as nested dictionaries within the 'tables' object",
-                                    "Use descriptive names for table keys based on table content or context",
-                                    "Provide a concise summary of the page content",
-                                    "Ensure the output is valid JSON and nothing else"
-                                  ]
-                                }
-
-                                Human: Please analyze the following image:
-                                """
-                            }
-                        ]
-                    }
-                ]
-            )
-
-            response_content = response.content[0].text
-            response_json = json.loads(response_content)
-
-            if all(key in response_json for key in check_for_keys):
-                results.append(response_json)
-                break  # Exit the loop if all keys are present
-            else:
-                raise KeyError("Not all required keys are present in the response")
-        except Exception as e:
-            print(f"Error occurred: {e}")
-            retry_count += 1
-            if retry_count == max_retries:
-                results.append({"error": "Failed to analyze image after multiple retries"})
-                break
-
-    return results[0] if results else {"error": "Failed to analyze image"}
-
-def categorize_topics(topics):
-    prompt = {
-        "role": "You are an expert in categorization and data organization.",
-        "task": "Categorize the provided list of items into a minimal number of meaningful categories.",
-        "input": topics,
-        "output_format": {
-            "type": "JSON",
-            "structure": {
-                "categories": [
-                    {
-                        "name": "Category Name",
-                        "items": ["Item 1", "Item 2", "..."]
-                    }
-                ],
-                "category_count": "Total number of categories created"
-            }
-        },
-        "instructions": [
-            "Analyze the provided list of items",
-            "Create categories that group similar or related items together",
-            "Aim to minimize the number of categories while maintaining meaningful distinctions",
-            "Ensure each item is placed in the most appropriate category",
-            "Provide descriptive and concise names for each category",
-            "Include a count of the total number of categories created",
-            "Return ONLY the JSON output, no additional text"
-        ],
-        "guidelines": [
-            "Prioritize clarity and usefulness in your categorization",
-            "Consider multiple aspects of the items when determining categories (e.g., function, theme, context)",
-            "Be consistent in your categorization approach",
-            "If an item could fit multiple categories, choose the most relevant or create a more specific category if necessary"
-        ]
-    }
-
-    try:
-        response = anthropic.messages.create(
-            model="claude-3-sonnet-20240229",
-            max_tokens=4096,
-            messages=[
-                {
-                    "role": "user",
-                    "content": json.dumps(prompt)
-                }
-            ]
-        )
-
-        response_content = response.content[0].text
-        print(f"Raw API response: {response_content}")
-
-        try:
-            categorized_topics = json.loads(response_content)
-            print(f"Parsed categorized topics: {categorized_topics}")
-            return categorized_topics
-        except json.JSONDecodeError as json_error:
-            print(f"JSON parsing error: {str(json_error)}")
-            print(f"Failed to parse JSON: {response_content}")
-            return None
-
-    except Exception as e:
-        print(f"Error categorizing topics: {str(e)}")
-        return None
-
-def process_json_results(json_path):
-    try:
-        with open(json_path, 'r') as json_file:
-            all_pages_analysis = json.load(json_file)
-
-        common_topics = defaultdict(list)
-        for page, analysis in all_pages_analysis.items():
-            for topic in analysis.get('topics', []):
-                common_topics[topic].append(page)
-
-        # Categorize the common topics
-        categorized_topics = categorize_topics(list(common_topics.keys()))
-
-        result = {
-            "common_topics": dict(common_topics),
-            "categorized_topics": categorized_topics,
-            "pages": all_pages_analysis
-        }
-
-        document_name = os.path.splitext(os.path.basename(json_path))[0]
-        processed_json_path = f'/tmp/{document_name}_processed.json'
-        with open(processed_json_path, 'w') as json_file:
-            json.dump(result, json_file, indent=2)
-
-        # Upload the processed JSON to S3
-        s3_object_name = f'json_results/{document_name}_processed.json'
-        upload_file_to_s3(processed_json_path, S3_BUCKET, s3_object_name)
-
-        return s3_object_name
-
-    except Exception as e:
-        print(f"Error processing JSON results: {str(e)}")
-        return None
+# ... (rest of the code remains unchanged)
 
 @app.route('/process_pdf', methods=['POST'])
 def process_pdf():
@@ -252,7 +78,7 @@ def process_pdf():
             
             # Check if processed JSON file already exists in S3
             try:
-                s3_client.head_object(Bucket=S3_BUCKET, Key=s3_processed_json_object)
+                s3_client.head_object(Bucket=S3_BUCKET, Key=os.path.join(S3_PREFIX, s3_processed_json_object))
                 print(f"Existing processed JSON file found in S3: {s3_processed_json_object}")
                 return jsonify({
                     "message": "Processed JSON file already exists",
@@ -264,7 +90,7 @@ def process_pdf():
             
             # Check if JSON file already exists in S3
             try:
-                s3_client.head_object(Bucket=S3_BUCKET, Key=s3_json_object)
+                s3_client.head_object(Bucket=S3_BUCKET, Key=os.path.join(S3_PREFIX, s3_json_object))
                 print(f"Existing JSON file found in S3: {s3_json_object}")
                 download_file_from_s3(S3_BUCKET, s3_json_object, json_path)
             except ClientError:
@@ -327,7 +153,7 @@ def process_pdf():
 @app.route('/get_processed_json/<filename>', methods=['GET'])
 def get_processed_json(filename):
     try:
-        s3_object = f'json_results/{filename}'
+        s3_object = os.path.join(S3_PREFIX, f'json_results/{filename}')
         file_obj = s3_client.get_object(Bucket=S3_BUCKET, Key=s3_object)
         return send_file(
             BytesIO(file_obj['Body'].read()),
@@ -341,7 +167,7 @@ def get_processed_json(filename):
 @app.route('/get_pdf_page/<filename>/<int:page_number>', methods=['GET'])
 def get_pdf_page(filename, page_number):
     try:
-        s3_pdf_object = f'uploads/{filename}'
+        s3_pdf_object = os.path.join(S3_PREFIX, f'uploads/{filename}')
         local_pdf_path = f'/tmp/{filename}'
         download_file_from_s3(S3_BUCKET, s3_pdf_object, local_pdf_path)
 

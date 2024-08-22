@@ -6,3 +6,4 @@ boto3
 anthropic
 fitz
 flask_cors
+gunicorn

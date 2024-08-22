@@ -1,15 +1,22 @@
 version: 1.0
-runtime: python3
+runtime: python3.9
 build:
   commands:
     build:
-      - pip install -r backend/requirements.txt
+      - cd backend
+      - pip install -r requirements.txt
 run:
-  command: python backend/app.py
+  command: cd backend && python app.py
   network:
     port: 5000
   env:
     - name: ANTHROPIC_API_KEY
-      value: '{{resolve:ssm:ANTHROPIC_API_KEY:1}}'
+      value: '{{resolve:ssm:/app/ANTHROPIC_API_KEY:1}}'
     - name: HERACLES_S3_BUCKET
-      value: '{{resolve:ssm:HERACLES_S3_BUCKET:1}}'
+      value: 'protoapps'
+    - name: HERACLES_S3_PREFIX
+      value: 'heracles'
+    - name: FLASK_APP
+      value: app.py
+    - name: FLASK_ENV
+      value: production
