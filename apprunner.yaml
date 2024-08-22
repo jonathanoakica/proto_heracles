@@ -3,16 +3,7 @@ runtime: python311
 build:
   commands:
     build:
-      - echo "Current directory:"
-      - pwd
-      - echo "Listing contents of current directory:"
-      - ls -la
-      - echo "Changing to backend directory:"
-      - cd backend
-      - echo "Listing contents of backend directory:"
-      - ls -la
-      - echo "Installing dependencies:"
-      - pip install -r requirements.txt -v
+      - pip install -r requirements.txt
 run:
   command: cd backend && python app.py
   network:
