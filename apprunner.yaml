@@ -4,14 +4,6 @@ build:
   commands:
     build:
       - pip install flask
-      - pip install PyPDF2
-      - pip install Pillow
-      - pip install requests
-      - pip install boto3
-      - pip install anthropic
-      - pip install PyMuPDF
-      - pip install flask_cors
-      - pip install gunicorn
 run:
   command: cd backend && python app.py
   network:
