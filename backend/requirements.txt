@@ -4,6 +4,6 @@ Pillow
 requests
 boto3
 anthropic
-fitz
+PyMuPDF
 flask_cors
 gunicorn
