@@ -8,9 +8,6 @@ run:
   command: flask run --host=0.0.0.0 --port=8080
   network:
     port: 8080
-  container:
-    image:
-      url: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${IMAGE_REPO_NAME}:${IMAGE_TAG}
   env:
     - name: FLASK_APP
       value: app.py

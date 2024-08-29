@@ -25,3 +25,30 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - echo Deploying to App Runner...
+      - |
+        aws apprunner create-service --cli-input-json '{
+          "ServiceName": "aws-ready-app",
+          "SourceConfiguration": {
+            "ImageRepository": {
+              "ImageIdentifier": "'$AWS_ACCOUNT_ID'.dkr.ecr.'$AWS_DEFAULT_REGION'.amazonaws.com/'$IMAGE_REPO_NAME':'$IMAGE_TAG'",
+              "ImageConfiguration": {
+                "Port": "8080",
+                "RuntimeEnvironmentVariables": {
+                  "FLASK_APP": "app.py",
+                  "ANTHROPIC_API_KEY": "{{resolve:ssm:/app/ANTHROPIC_API_KEY:1}}",
+                  "HERACLES_S3_BUCKET": "{{resolve:ssm:/app/HERACLES_S3_BUCKET:1}}",
+                  "HERACLES_S3_PREFIX": "{{resolve:ssm:/app/HERACLES_S3_PREFIX:1}}",
+                  "AWS_DEFAULT_REGION": "{{resolve:ssm:/app/AWS_DEFAULT_REGION:1}}"
+                }
+              },
+              "ImageRepositoryType": "ECR"
+            },
+            "AutoDeploymentsEnabled": true
+          },
+          "InstanceConfiguration": {
+            "Cpu": "1 vCPU",
+            "Memory": "2 GB"
+          }
+        }'
+      - echo Deployment to App Runner completed
