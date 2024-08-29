@@ -8,8 +8,7 @@ phases:
       - docker --version
       - aws sts get-caller-identity --query Account --output text > account.txt
       - export AWS_ACCOUNT_ID=$(cat account.txt)
-      - aws ssm get-parameter --name '/app/AWS_DEFAULT_REGION' --query 'Parameter.Value' --output text > region.txt
-      - export AWS_DEFAULT_REGION=$(cat region.txt)
+      - export AWS_DEFAULT_REGION=us-east-1
       - echo AWS Account ID $AWS_ACCOUNT_ID
       - echo AWS Region $AWS_DEFAULT_REGION
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION > password.txt
