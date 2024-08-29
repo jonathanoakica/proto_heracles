@@ -7,9 +7,9 @@ phases:
       - aws --version
       - docker --version
       - export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-      - export AWS_DEFAULT_REGION=$(aws configure get region)
-      - echo $AWS_ACCOUNT_ID
-      - echo $AWS_DEFAULT_REGION
+      - export AWS_DEFAULT_REGION=$(aws ssm get-parameter --name "/app/AWS_DEFAULT_REGION" --query "Parameter.Value" --output text)
+      - echo AWS Account ID: $AWS_ACCOUNT_ID
+      - echo AWS Region: $AWS_DEFAULT_REGION
       - ECR_PASSWORD=$(aws ecr get-login-password --region $AWS_DEFAULT_REGION)
       - if [ $? -ne 0 ]; then echo "Failed to get ECR password"; exit 1; fi
       - echo $ECR_PASSWORD | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
